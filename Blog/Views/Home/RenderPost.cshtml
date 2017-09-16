@@ -1,0 +1,27 @@
+﻿@using Blog.Models;
+@model Blog.Models.Pagination<Post>
+
+@{
+    ViewBag.Title = "RenderPost";
+}
+
+<div id="postlist" title="@Model.Page">
+    @foreach (var post in Model.Items())
+    {
+        <h2>
+            <a href="@Url.RouteUrl("Post", new { postId = post.Id })">@post.Title</a>
+        </h2>
+                        <p class="lead">
+                            by <a href="@Url.RouteUrl("SearchAuthor", new { author = post.User.UserName })">@post.User.UserName</a>
+                        </p>
+                        <p style="display:inline; margin-right:20px"><span class="glyphicon glyphicon-time"></span> @post.TimeStamp </p>
+                        <p style="display:inline"><span class="glyphicon glyphicon-tag"></span> @post.Category </p>
+                        <hr>
+                        <p>@post.Body</p>
+                        <a class="btn btn-primary" href="@Url.RouteUrl("Post", new { postId = post.Id })">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                        <hr>
+    }
+</div>
+
+
+
