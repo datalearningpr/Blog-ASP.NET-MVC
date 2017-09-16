@@ -8,8 +8,7 @@ A simple blog web application created by ASP.NET MVC.
 The blog is using an open source markdown editor plugin, which can be downloaded from the address below:
 https://github.com/pandao/editor.md/archive/master.zip
 
-1. Create static folder under Blog folder
-Unzip the downloaded file into the static folder, with then name to be: **editormd**
+1. Create static folder under Blog folder. Unzip the downloaded file into the static folder, with then name to be: **editormd**
 
 2. Database is using MS-SQL, configure your DB name and connection in the **Web.config** file.
 
